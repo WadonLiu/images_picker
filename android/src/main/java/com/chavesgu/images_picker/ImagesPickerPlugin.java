@@ -53,6 +53,7 @@ import com.luck.picture.lib.PictureSelectionModel;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.language.LanguageConfig;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
@@ -166,13 +167,13 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
         HashMap<String, Object> cropOption = call.argument("cropOption");
         String language = call.argument("language");
 
-        int chooseType = PictureMimeType.ofVideo();
+        int chooseType = SelectMimeType.ofVideo();
         switch (pickType) {
           case "PickType.image":
-            chooseType = PictureMimeType.ofImage();
+            chooseType = SelectMimeType.ofImage();
             break;
           default:
-            chooseType = PictureMimeType.ofVideo();
+            chooseType = SelectMimeType.ofVideo();
             break;
         }
 
